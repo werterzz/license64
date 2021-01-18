@@ -17,6 +17,7 @@ for (let element of x)
             headTabOne[0].classList.add('hidden');
             tabOneBox[0].classList.add('hidden');
             tabOne[0].classList.add('hidden');
+            tabOne[1].classList.add('hidden');
             tabTwo[0].classList.add('hidden');
             tabThree[0].classList.add('hidden');
             
@@ -71,6 +72,8 @@ fetch('https://www.googleapis.com/youtube/v3/playlists?key=' + apiKey + '&channe
 });
 // -------------------------------------------------------
 
+// tabone
+// -------------------------------------------------------
 fetch("../data/exam.json")
 .then(response => response.json())
 .then(json => {
@@ -80,3 +83,30 @@ fetch("../data/exam.json")
     i++;
 }  
 });
+
+var tabOneRow = document.getElementsByClassName("tabOneRow");
+for (let element of headTabOne[0].children)
+{
+  element.addEventListener("click", () => {
+    for (let oldElement of headTabOne[0].children)
+    {
+      oldElement.classList.remove('selectHead');
+    }
+    for (let oldElement of tabOneRow)
+    {
+      oldElement.classList.add('hidden');
+    }
+    element.classList.add('selectHead');
+    if (element.innerHTML == "หมวดหมู่")
+    {
+      tabOneRow[0].classList.remove('hidden');
+      tabOneRow[1].classList.add('hidden');
+    }
+    else if (element.innerHTML == "ข้อสอบย้อนหลัง")
+    {
+      tabOneRow[0].classList.add('hidden');
+      tabOneRow[1].classList.remove('hidden');
+    }
+  });
+}
+// -------------------------------------------------------

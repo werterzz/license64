@@ -16,14 +16,28 @@ class Tab1Controller extends Controller
 
         $path = base_path().'/public/data/exam.json';
         $content = json_decode(file_get_contents($path), true);
-        $exam = $content[$id];
 
-        shuffle($exam["exam"]);
-
-        if (count($exam["exam"]) > 30) 
+        if ($id >= 0)
         {
-            $exam["exam"] = array_slice($exam["exam"], 0, 30);
+            $exam = $content[$id];
+
+            shuffle($exam["exam"]);
+
+            if (count($exam["exam"]) > 30) 
+            {
+                $exam["exam"] = array_slice($exam["exam"], 0, 30);
+            }            
         }
+        else 
+        {
+            $exam = [];
+            for($i=0; $i < count($content); $i++){
+                $exam = array_merge($exam, $content[$i]);
+              }
+            shuffle($exam["exam"]);
+            $exam["exam"] = array_slice($exam["exam"], 0, 50);
+        }
+
         // dd($exam["exam"]);
         return view('tabOneContent', compact('exam', 'isAnswer'));
         

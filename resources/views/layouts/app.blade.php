@@ -10,14 +10,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
-<body class="bgMain">
-  <div class="header">ข้อสอบ</div>
-  <div>
-    @yield('content')
-  </div>
-    
 
-    <div class="footer">
+<div class="footer">
     <div class="row">
     <div class="col-sm tab-selected">
     <ion-icon name="pencil-outline"></ion-icon>
@@ -31,12 +25,24 @@
     <ion-icon name="logo-youtube"></ion-icon>
       <ion-label>วิดีโอ</ion-label>
     </div>
-    <div class="col-sm">
+    <!-- <div class="col-sm">
     <ion-icon name="settings-outline"></ion-icon>
       <ion-label>ตั้งค่า</ion-label>
-    </div>
+    </div> -->
+  </div>
+  <div class="row">
+  <div class="header">ข้อสอบ</div>
   </div>
 </div>
+
+<body class="bgMain">
+  <div class="header">ข้อสอบ</div>
+  <div>
+    @yield('content')
+  </div>
+    
+
+
 </body>
 </html>
 <style>
@@ -58,20 +64,20 @@
         color: #FFF;
   }
   .header {
-    position: fixed;
-   left: 0;
-   top: 0;
+    /* position: fixed; */
+   /* left: 0;
+   top: 7; */
    width: 100%;
    background-color: #c14ad2;
    color:  #fff;
    text-align: center;
-   padding: 1%;
+   padding: 0.5%;
    cursor: context-menu;
   }
 .footer {
    position: fixed;
    left: 0;
-   bottom: 0;
+   top: 0;
    width: 100%;
    background-color: #fff;
    color:  #a1a1a1;

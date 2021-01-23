@@ -7,22 +7,27 @@
     </ul>
 </div>
 </div>
-    <ul class="tab-one tabOneRow hidden">
+<div class=" randomExam hidden">
+<ul class="tab-one tabOneRow hidden">
     <li><a href="/tabone/-1/0"> สุ่มทำข้อสอบปี 2563</a></li>
     <li><a href="/tabone/-1/0"> สุ่มทำข้อสอบปี 2562</a></li>
     <li><a href="/tabone/-1/0"> สุ่มทำข้อสอบปี 2561</a></li>
     <li><a href="/tabone/-1/0"> สุ่มทำข้อสอบปี 2560</a></li>
     </ul>
 </div>
+
+
+
+</div>
 <style>
 
 .headTabOne {
-   margin-top: 5vh;
+   /* margin-top: 5vh; */
    background-color: rgba(255,255,255,0.1);
    color:  rgba(255,255,255,0.5);;
    text-align: center;
    /* padding: 1%; */
-   padding-top: 2%;
+   padding-top: 1%;
    cursor: context-menu;
   }
 
@@ -34,6 +39,10 @@
 
   .tab-one-box {
       /* height: 105vh; */
+  }
+
+  .randomExam {
+      min-height: 80vh;
   }
 
  .tab-one {

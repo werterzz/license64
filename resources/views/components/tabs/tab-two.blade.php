@@ -6,7 +6,7 @@
  .tab-two {
      color: #fff;
      margin: auto;
-     margin-top: 6%;
+     margin-top: 3%;
      margin-bottom: 3%;
      text-align: center;
      background-color: rgba(255,255,255,0.1);

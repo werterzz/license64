@@ -15,16 +15,18 @@
   <a href="/"><ion-icon name="arrow-back-outline" class="backBtn"></ion-icon></a>
   @yield('title')
   </div>
-  <div>
+  <div class="mainContent">
     @yield('content')
   </div>
-    
+  <x-footer />
 </body>
 </html>
 <style>
   /* body {
     overflow: hidden;
   } */
+
+  @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
 
   .backBtn {
       float: left;
@@ -35,10 +37,16 @@
     text-decoration: none;
   }
 
+  .mainContent {
+    min-height: 90vmax;
+    margin-bottom: 1vmax;
+  }
+
   .bgMain {
     background-image: linear-gradient(#c14ad2, #23d5de);
     background-attachment: fixed;
-    height: 100vh;
+    font-family: Prompt;
+
   }
   .tab-selected {
     background-color: #c14ad2;
@@ -55,17 +63,5 @@
    padding: 1%;
    cursor: context-menu;
   }
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: #fff;
-   color:  #a1a1a1;
-   text-align: center;
-   cursor: pointer;
-}
-.footer .row .col-sm {
-  padding: 1%;
-}
+
 </style>

@@ -11,30 +11,66 @@
             <div>
                 {{ $index+1 }}. {{ $test['name'] }}
             </div>
+            @if (isset($test['image']))
+              <div class="questionImage"><img src="/storage/exam/image/{{ $test['image'] }}" alt=""></div>
+            @endif
 
-<div>
-    <label class="contain">{{ $test['choice'][0] }}
+<div class="oldChoice">
+    <label class="contain">
+    @if (isset($test['type']))
+      <div class="ChoiceImage"><?php
+echo '<img src="/storage/exam/image/', urlencode($test['choice'][0]) ,'" alt="">';
+?></div>
+    @endif
     <input type="radio" id="{{ $test['name'] }}0" name="test{{ $index+1 }}" value="0 {{ $test['correct'] }}">
     <span class="checkmark"></span>
     </label>
+    @if (!(isset($test['type'])))
+      <div class="textChoice">{{ $test['choice'][0] }}</div>
+    @endif
 </div>
-<div>
-    <label class="contain">{{ $test['choice'][1] }}
+<div class="evenChoice">
+    <label class="contain">
+    @if (isset($test['type']))
+      <div class="ChoiceImage"><?php
+echo '<img src="/storage/exam/image/', urlencode($test['choice'][1]) ,'" alt="">';
+?></div>
+    @endif
     <input type="radio" id="{{ $test['name'] }}1" name="test{{ $index+1 }}"  value="1 {{ $test['correct'] }}">
     <span class="checkmark"></span>
     </label>
+    @if (!(isset($test['type'])))
+      <div class="textChoice">{{ $test['choice'][1] }}</div>
+    @endif
 </div>
-<div>
-    <label class="contain">{{ $test['choice'][2] }}
+<div class="oldChoice">
+    <label class="contain">
+    @if (isset($test['type']))
+      <div class="ChoiceImage"><?php
+echo '<img src="/storage/exam/image/', urlencode($test['choice'][2]) ,'" alt="">';
+?></div>
+    @endif
     <input type="radio" id="{{ $test['name'] }}2" name="test{{ $index+1 }}"  value="2 {{ $test['correct'] }}">
     <span class="checkmark"></span>
     </label>
+    @if (!(isset($test['type'])))
+      <div class="textChoice">{{ $test['choice'][2] }}</div>
+    @endif
 </div>
-<div>
-    <label class="contain">{{ $test['choice'][3] }}
+<div class="evenChoice">
+    <label class="contain">
+    @if (isset($test['type']))
+      <div class="ChoiceImage"><?php
+echo '<img src="/storage/exam/image/', urlencode($test['choice'][3]) ,'" alt="">';
+?></div>
+    @endif
     <input type="radio" id="{{ $test['name'] }}3" name="test{{ $index+1 }}" value="3 {{ $test['correct'] }}">
     <span class="checkmark"></span>
     </label>
+    @if (!(isset($test['type'])))
+      <div class="textChoice">{{ $test['choice'][3] }}</div>
+    @endif
+    
 </div>
 
 
@@ -54,10 +90,10 @@
 
 <!-- Modal -->
 @if (isset($score))
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" id="checkModal">
-    <div class="modal-content">
-      <div class="modal-body">
+<div class="modal fade justify-content-center" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered justify-content-center" id="checkModal">
+    <div class="modal-content justify-content-center">
+      <div class="modal-body justify-content-center">
       <div><ion-icon name="{{ $icon }}" class="result-icon"></ion-icon></div>
       
       <strong>คะแนนของคุณคือ {{ $score }}/{{ $totalScore }}</strong>
@@ -92,7 +128,31 @@
 
 <script src="{{ asset('js/tabOneForm.js') }}"></script>
 
+
+
     <style>
+
+
+      .ChoiceImage {
+        width: 20%;
+        height: 20%;
+        background-color: rgba(255, 0, 0, 0.0) !important;
+      }
+
+      .textChoice {
+        margin-left: 8vmin;
+      }
+
+          #checkModal {
+            width: 32vmax;
+            margin: auto;
+          }
+
+          .questionImage {
+            width: 20%;
+            margin: 0 auto;
+            margin-top: 1.6vh;
+          }
 
           #ansBtn, #againBtn, #closeBtn {
           text-decoration: none;
@@ -109,6 +169,10 @@
           background-color: #fff;
           border: 2px solid #c14ad2;
           outline: none;
+        }
+
+        #shareBtn, #closeBtn {
+          margin-top: 2vh;
         }
 
         .fixed {
@@ -139,9 +203,10 @@
 
         .examCard {
             margin: auto;
-            margin-top: 10%;
+            margin-top: 5%;
             width: 60%;
             border: 3px solid #c14ad2;
+            margin-bottom: 5%;
 
 
         }
@@ -175,12 +240,12 @@
             padding-left: 2vw;
         }
 
-        .examCard div:nth-child(2) , .examCard div:nth-child(4) {
+        .oldChoice {
             padding: 8px;
             background-color: rgba(255,255,255,0.15);
             /* position: relative; */
         }
-        .examCard div:nth-child(3) , .examCard div:nth-child(5) {
+        .evenChoice {
             padding: 8px;
             background-color: rgba(255,255,255,0.25);
             /* position: relative; */
@@ -195,6 +260,7 @@
         .contain {
   display: block;
   position: relative;
+  margin-right: 5vh;
   padding-left: 35px;
   /* margin-bottom: 12px; */
   cursor: pointer;
@@ -255,6 +321,18 @@
 	height: 8px;
 	border-radius: 50%;
 	background: #c14ad2;
+}
+
+
+@media (max-width: 575.98px) {
+  .ChoiceImage {
+    margin-left: 5%;
+    width: 70%;
+  }
+
+  .questionImage {
+    width: 70%;
+  }
 }
     </style>
 @endsection

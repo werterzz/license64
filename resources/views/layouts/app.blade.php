@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 
-<div class="footer">
+<!-- <div class="footer">
     <div class="row">
     <div class="col-sm tab-selected">
     <ion-icon name="pencil-outline"></ion-icon>
@@ -25,30 +25,52 @@
     <ion-icon name="logo-youtube"></ion-icon>
       <ion-label>วิดีโอ</ion-label>
     </div>
-    <!-- <div class="col-sm">
-    <ion-icon name="settings-outline"></ion-icon>
-      <ion-label>ตั้งค่า</ion-label>
-    </div> -->
   </div>
   <div class="row">
   <div class="header">ข้อสอบ</div>
   </div>
-</div>
+</div> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="#">
+      <img src="/storage/licenseLogo.png" alt="" width="30" height="24">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">ข้อสอบ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">เนื้อหา</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">วิดีโอ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <body class="bgMain">
-  <div class="header">ข้อสอบ</div>
+  <!-- <div class="header">ข้อสอบ</div> -->
   <div>
     @yield('content')
   </div>
     
-
-
+  <x-footer />
 </body>
 </html>
 <style>
   /* body {
     overflow: hidden;
   } */
+
+  @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
+
   .hidden {
   display: none;
 }
@@ -58,10 +80,12 @@
     background-attachment: fixed;
     /* height: 100vh; */
     margin: 0;
+    font-family: Prompt;
+    min-height: 100vh;
   }
   .tab-selected {
-    background-color: #c14ad2;
-        color: #FFF;
+    /* background-color: #c14ad2; */
+        color: #c14ad2 !important;
   }
   .header {
     /* position: fixed; */

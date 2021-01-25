@@ -99,4 +99,4 @@
   }
 
 </style>
-<!-- <script src="{{ asset('js/appPage.js') }}" defer></script> -->
+<script src="{{ asset('js/inContentPage.js') }}" defer></script>

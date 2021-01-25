@@ -121,3 +121,14 @@ for (let element of headTabOne[0].children)
   });
 }
 // -------------------------------------------------------
+
+// check page load on navbar in content
+
+window.addEventListener('load', (event) => {
+  var url_string = window.location.href;
+  var url = new URL(url_string);
+  var selected = url.searchParams.get("page");
+  if (selected == "exam") x[0].firstElementChild.click();
+  else if (selected == "content") x[1].firstElementChild.click();
+  else if (selected == "video") x[2].firstElementChild.click();
+});

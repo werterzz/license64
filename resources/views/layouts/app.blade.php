@@ -42,7 +42,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">ข้อสอบ</a>
+          <a class="nav-link tab-selected" aria-current="page" href="#">ข้อสอบ</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">เนื้อหา</a>
@@ -74,6 +74,16 @@
   .hidden {
   display: none;
 }
+.tab-selected {
+        color: #c14ad2 !important;
+  }
+.navbar {
+  position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
 
   .bgMain {
     background-image: linear-gradient(#c14ad2, #23d5de);
@@ -83,10 +93,7 @@
     font-family: Prompt;
     min-height: 100vh;
   }
-  .tab-selected {
-    /* background-color: #c14ad2; */
-        color: #c14ad2 !important;
-  }
+
   .header {
     /* position: fixed; */
    /* left: 0;
@@ -111,5 +118,11 @@
 .footer .row .col-sm {
   padding: 1%;
 }
+
+/* @media (max-width: 575.98px) {
+    .boxSize {
+        width: 120%;
+    }
+} */
 </style>
 <script src="{{ asset('js/appPage.js') }}" defer></script>

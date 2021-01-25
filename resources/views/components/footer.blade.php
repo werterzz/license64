@@ -3,8 +3,11 @@
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: #c14ad2; color: #fff;">
   เตรียมพร้อมสอบใบขับขี่
-    <a class="text-dark" href="https://play.google.com/store/apps/details?id=com.artkidstudio.driverlicense&hl=th"><div class="logoStore"><img  src="/storage/LogoImages/google-play-badge.svg"></div></a>
-    <a class="text-dark" href="https://play.google.com/store/apps/details?id=com.artkidstudio.driverlicense&hl=th"><div class="logoStore"><img  src="/storage/LogoImages/app-store-badge.svg"></div></a>
+  <div class="logo">
+  <a class="" href="https://play.google.com/store/apps/details?id=com.artkidstudio.driverlicense&hl=th"><div class="logoStore"><img  src="/storage/LogoImages/google-play-badge.svg"></div></a>
+    <a class="" href="https://play.google.com/store/apps/details?id=com.artkidstudio.driverlicense&hl=th"><div class="logoStore"><img  src="/storage/LogoImages/app-store-badge.svg"></div></a>
+  </div>
+
   </div>
   <!-- Copyright -->
 </footer>
@@ -22,16 +25,29 @@
     padding: 0px;
   }
 
+  .logo {
+      display: inline-block;
+    }
+
   @media (max-width: 575.98px) {
     .logoStore {
-      width: 20vw;
+      width: 30vw;
       /* height: 8vh; */
       
     }
     .logoStore img {
       object-fit: contain;
-      height: 130%;
-      width: 10vmax;
+      /* height: 130%; */
+      max-width:100%;
+max-height:50%;
+    }
+    .logoStore:nth-child(1)
+    {
+      margin-top: -5vh;
+      
+    }
+    .logo {
+      display: block;
     }
 }
 </style>

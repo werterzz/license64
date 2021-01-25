@@ -11,10 +11,33 @@
     <title>Document</title>
 </head>
 <body class="bgMain">
-  <div class="header">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="#">
+      <img src="/storage/licenseLogo.png" alt="" width="30" height="24">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link tab-selected" aria-current="page" href="#">ข้อสอบ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">เนื้อหา</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">วิดีโอ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!-- <div class="header">
   <a href="/"><ion-icon name="arrow-back-outline" class="backBtn"></ion-icon></a>
   @yield('title')
-  </div>
+  </div> -->
   <div class="mainContent">
     @yield('content')
   </div>
@@ -32,6 +55,22 @@
       float: left;
   }
 
+
+.tab-selected {
+    color: #c14ad2 !important;
+  }
+
+  .navbar {
+  position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+}
+
+
   .header a {
       color: #fff;
     text-decoration: none;
@@ -47,11 +86,6 @@
     background-attachment: fixed;
     font-family: Prompt;
 
-  }
-  .tab-selected {
-    background-color: #c14ad2;
-        color: #FFF;
-  }
   .header {
     position: fixed;
    left: 0;
@@ -65,3 +99,4 @@
   }
 
 </style>
+<!-- <script src="{{ asset('js/appPage.js') }}" defer></script> -->

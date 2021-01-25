@@ -3,6 +3,7 @@
 @section('title', $exam['name'] )
 
 @section('content')
+<div class="space"></div>
     <div class="tabTwoImageCard">
     <form  id="examForm" method="post" action="{{ $_SERVER['REQUEST_URI'] }}">
     @csrf <!-- {{ csrf_field() }} -->
@@ -100,7 +101,7 @@ echo '<img src="/storage/exam/image/', urlencode($test['choice'][3]) ,'" alt="">
       <p>{{ $resultTxt }}</p>
       <button type="button" data-bs-dismiss="modal" id="ansBtn"><ion-icon slot="start"  name="checkmark-outline"></ion-icon>เฉลย</button>
       <button type="button"  id="againBtn"><ion-icon slot="start" name="refresh-outline"></ion-icon>ทำอีกครั้ง</button>
-      <div><button type="button"  id="shareBtn"><ion-icon slot="start" name="share-social-outline"></ion-icon>SHARE</button></div>
+      <!-- <div><button type="button"  id="shareBtn"><ion-icon slot="start" name="share-social-outline"></ion-icon>SHARE</button></div> -->
       <div><button type="button" id="closeBtn" data-bs-dismiss="modal"><ion-icon slot="start" name="close-outline"></ion-icon>ปิด</button></div>
       </div>
     </div>
@@ -132,6 +133,10 @@ echo '<img src="/storage/exam/image/', urlencode($test['choice'][3]) ,'" alt="">
 
     <style>
 
+.space {
+            width: 100%;
+            height: 5vh;
+        }
 
       .ChoiceImage {
         width: 20%;
@@ -333,6 +338,14 @@ echo '<img src="/storage/exam/image/', urlencode($test['choice'][3]) ,'" alt="">
   .questionImage {
     width: 70%;
   }
+
+  .examCard {
+    width: 95%;
+  }
+
+  .space {
+            height: 10vh;
+        }
 }
     </style>
 @endsection

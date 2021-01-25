@@ -1,5 +1,5 @@
 <div>
-    <ul class="tab-two hidden">
+    <ul class="tab-two hidden boxSize">
     </ul>
 </div>
 <style>
@@ -23,5 +23,14 @@
  .tab-two li a {
     color: #fff;
     text-decoration: none;
+ }
+ .boxSize {
+        margin-top: 15vh;
+    }
+ @media (max-width: 575.98px) {
+    .boxSize {
+        width: 90vw !important;
+        margin-top: 10vh;
+    }
  }
 </style>

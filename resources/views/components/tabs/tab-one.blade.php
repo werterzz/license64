@@ -22,12 +22,12 @@
 <style>
 
 .headTabOne {
-   /* margin-top: 5vh; */
+   margin-top: 1vh;
    background-color: rgba(255,255,255,0.1);
    color:  rgba(255,255,255,0.5);;
    text-align: center;
    /* padding: 1%; */
-   padding-top: 1%;
+   padding-top: 5%;
    cursor: context-menu;
   }
 
@@ -65,5 +65,16 @@
  .tab-one li a {
     color: #fff;
     text-decoration: none;
+ }
+
+ @media (max-width: 575.98px) {
+    .tabOneRow {
+        width: 90%;
+    }
+
+    .headTabOne {
+        margin-top: 5vh;
+        padding-top: 6%;
+    }
  }
 </style>

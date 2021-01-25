@@ -46,6 +46,13 @@
             color: #fff;
             text-decoration: none;
         }
+
+        @media (max-width: 575.98px) {
+            .tabThreeImageCard {
+                margin-top: 10vh;
+                width: 90%;
+            }
+        }
         
     </style>
 @endsection

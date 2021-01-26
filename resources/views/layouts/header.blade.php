@@ -77,7 +77,7 @@
   }
 
   .mainContent {
-    min-height: 90vmax;
+    min-height: 50vmax;
     margin-bottom: 1vmax;
   }
 

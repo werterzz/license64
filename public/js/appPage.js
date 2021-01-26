@@ -52,7 +52,7 @@ for (let element of x)
         
     });
 }
-fetch("../data/document.json")
+fetch("/data/document.json")
 .then(response => response.json())
 .then(json => {
   // console.log(json)
@@ -83,7 +83,7 @@ fetch('https://www.googleapis.com/youtube/v3/playlists?key=' + apiKey + '&channe
 
 // tabone
 // -------------------------------------------------------
-fetch("../data/exam.json")
+fetch("/data/exam.json")
 .then(response => response.json())
 .then(json => {
   let i = 0;

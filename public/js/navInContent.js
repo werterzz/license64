@@ -10,4 +10,4 @@ if (res[3] == "tabthree")
 {
     document.getElementsByClassName('nav-link')[0].classList.remove('tab-selected');
     document.getElementsByClassName('nav-link')[2].classList.add('tab-selected');
-}
+}   

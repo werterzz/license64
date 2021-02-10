@@ -3,16 +3,18 @@
 @section('title', $data['name'] )
 
 @section('content')
-<div class="space"></div>
+<!-- <div class="space"></div> -->
     <div class="tabTwoImageCard">
         @foreach ($data['file'] as $file)
-            <img src="/storage/images/{{ $file }}">
+            <img src="{{ asset('storage/images/' . $file) }}">
         @endforeach
     </div>
+    <x-bottom-banner />
+    <script src="{{ asset('js/navInContent.js') }}"></script>
     <style>
         .tabTwoImageCard {
             margin: auto;
-            margin-top: 10%;
+            margin-top: 2%;
             width: 60%;
         }
 
@@ -24,7 +26,7 @@
 
         .space {
             width: 100%;
-            height: 5vh;
+            height: 10vh;
         }
         @media (max-width: 575.98px) {
             .tabTwoImageCard {

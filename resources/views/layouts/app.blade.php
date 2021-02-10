@@ -30,11 +30,11 @@
   <div class="header">ข้อสอบ</div>
   </div>
 </div> -->
-
+<div class="head"></div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
   <a class="navbar-brand" href="#">
-      <img src="/storage/licenseLogo.png" alt="" width="30" height="24">
+      <img src="./storage/licenseLogo.png" alt="" width="30" height="24">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -62,6 +62,7 @@
   </div>
     
   <x-footer />
+
 </body>
 </html>
 <style>
@@ -71,8 +72,28 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
 
+
+
   .hidden {
   display: none;
+}
+.head {
+  position: fixed;
+top: 2.4vh;
+text-align: center;
+width: 55vw;
+left: 22.5vw;
+right: 22.5vw;
+z-index: 10000;
+color: #c14ad2 !important;
+pointer-events: none;
+
+}
+
+
+
+.nav-link {
+  z-index: 10001:
 }
 .tab-selected {
         color: #c14ad2 !important;
@@ -119,10 +140,14 @@
   padding: 1%;
 }
 
-/* @media (max-width: 575.98px) {
-    .boxSize {
-        width: 120%;
-    }
-} */
+ /* @media (max-width: 575.98px) {
+    .head {
+  margin: auto !important;
+  }
+  @media (min-width: 575.98px) {
+    .head {
+      
+  } */
+} 
 </style>
 <script src="{{ asset('js/appPage.js') }}" defer></script>

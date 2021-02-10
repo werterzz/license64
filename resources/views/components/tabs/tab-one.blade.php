@@ -15,7 +15,7 @@
     <li><a href="/tabone/-1/0"> สุ่มทำข้อสอบปี 2560</a></li>
     </ul>
 </div>
-
+<x-bottom-banner />
 
 
 </div>
@@ -48,7 +48,7 @@
  .tab-one {
      color: #fff;
      margin: auto;
-     margin-top: 3%;
+     margin-top: 2%;
      margin-bottom: 7%;
      text-align: center;
      background-color: rgba(255,255,255,0.1);

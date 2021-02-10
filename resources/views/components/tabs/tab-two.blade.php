@@ -1,4 +1,7 @@
-<div>
+<div class="headTabTwo hidden">
+<div class="tabTwoTopBanner">
+</div>
+
     <ul class="tab-two hidden boxSize">
     </ul>
 </div>
@@ -6,7 +9,7 @@
  .tab-two {
      color: #fff;
      margin: auto;
-     margin-top: 3%;
+     margin-top: 1%;
      margin-bottom: 3%;
      text-align: center;
      background-color: rgba(255,255,255,0.1);
@@ -25,11 +28,18 @@
     text-decoration: none;
  }
  .boxSize {
-        margin-top: 15vh;
+        margin-top: 3vh;
+    }
+
+    .tabTwoTopBanner {
+        margin-top: 6%;
     }
  @media (max-width: 575.98px) {
     .boxSize {
         width: 90vw !important;
+        margin-top: 2vh;
+    }
+    .tabTwoTopBanner {
         margin-top: 10vh;
     }
  }

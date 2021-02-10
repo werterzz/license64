@@ -11,10 +11,11 @@
     <title>Document</title>
 </head>
 <body class="bgMain">
+<div class="head">@yield('title')</div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
   <a class="navbar-brand" href="#">
-      <img src="/storage/licenseLogo.png" alt="" width="30" height="24">
+      <img src="{{ asset('storage/licenseLogo.png') }}" alt="" width="30" height="24">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -38,9 +39,13 @@
   <a href="/"><ion-icon name="arrow-back-outline" class="backBtn"></ion-icon></a>
   @yield('title')
   </div> -->
+  <div class="topHeaderBanner">
+  </div>
+  <div class="space"></div>
   <div class="mainContent">
     @yield('content')
   </div>
+  <div class="bspace"></div>
   <x-footer />
 </body>
 </html>
@@ -54,11 +59,38 @@
   .backBtn {
       float: left;
   }
+  .space {
+    height: 7vh;
+    width: 50px;
+  }
 
+  .bspace {
+    height: 90px;
+    width: 50px;
+  }
 
 .tab-selected {
     color: #c14ad2 !important;
   }
+
+  .topHeaderBanner 
+  {
+    margin-top: 12vh;
+  }
+
+  .head {
+  position: fixed;
+top: 2.4vh;
+text-align: center;
+width: 55vw;
+left: 22.5vw;
+right: 22.5vw;
+z-index: 10000;
+color: #c14ad2 !important;
+pointer-events: none;
+
+
+}
 
   .navbar {
   position: fixed;
@@ -68,7 +100,8 @@
     z-index: 1030;
 }
 
-}
+
+
 
 
   .header a {
@@ -85,6 +118,7 @@
     background-image: linear-gradient(#c14ad2, #23d5de);
     background-attachment: fixed;
     font-family: Prompt;
+  }
 
   .header {
     position: fixed;
@@ -96,6 +130,20 @@
    text-align: center;
    padding: 1%;
    cursor: context-menu;
+  }
+
+  @media (max-width: 575.98px) {
+    .space {
+      height: 11.5vh;
+    }
+    .head {
+      font-size: 95% !important;
+      line-height: 100%;
+    }
+    .topHeaderBanner 
+  {
+    margin-top: 10vh;
+  }
   }
 
 </style>

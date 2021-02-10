@@ -3,7 +3,7 @@
 @section('title', $exam['name'] )
 
 @section('content')
-<div class="space"></div>
+<!-- <div class="space"></div> -->
     <div class="tabTwoImageCard">
     <form  id="examForm" method="post" action="{{ $_SERVER['REQUEST_URI'] }}">
     @csrf <!-- {{ csrf_field() }} -->
@@ -13,14 +13,14 @@
                 {{ $index+1 }}. {{ $test['name'] }}
             </div>
             @if (isset($test['image']))
-              <div class="questionImage"><img src="/storage/exam/image/{{ $test['image'] }}" alt=""></div>
+              <div class="questionImage"><img src="{{ asset('storage/exam/image/' . $test['image'] ) }}" alt=""></div>
             @endif
 
 <div class="oldChoice">
     <label class="contain">
     @if (isset($test['type']))
       <div class="ChoiceImage"><?php
-echo '<img src="/storage/exam/image/', urlencode($test['choice'][0]) ,'" alt="">';
+echo '<img src="', asset('storage/exam/image/'. urlencode($test['choice'][0]) ) ,'" alt="">';
 ?></div>
     @endif
     <input type="radio" id="{{ $test['name'] }}0" name="test{{ $index+1 }}" value="0 {{ $test['correct'] }}">
@@ -34,7 +34,7 @@ echo '<img src="/storage/exam/image/', urlencode($test['choice'][0]) ,'" alt="">
     <label class="contain">
     @if (isset($test['type']))
       <div class="ChoiceImage"><?php
-echo '<img src="/storage/exam/image/', urlencode($test['choice'][1]) ,'" alt="">';
+echo '<img src="', asset('storage/exam/image/'. urlencode($test['choice'][1]) ) ,'" alt="">';
 ?></div>
     @endif
     <input type="radio" id="{{ $test['name'] }}1" name="test{{ $index+1 }}"  value="1 {{ $test['correct'] }}">
@@ -48,7 +48,7 @@ echo '<img src="/storage/exam/image/', urlencode($test['choice'][1]) ,'" alt="">
     <label class="contain">
     @if (isset($test['type']))
       <div class="ChoiceImage"><?php
-echo '<img src="/storage/exam/image/', urlencode($test['choice'][2]) ,'" alt="">';
+echo '<img src="', asset('storage/exam/image/'. urlencode($test['choice'][2]) ) ,'" alt="">';
 ?></div>
     @endif
     <input type="radio" id="{{ $test['name'] }}2" name="test{{ $index+1 }}"  value="2 {{ $test['correct'] }}">
@@ -62,7 +62,7 @@ echo '<img src="/storage/exam/image/', urlencode($test['choice'][2]) ,'" alt="">
     <label class="contain">
     @if (isset($test['type']))
       <div class="ChoiceImage"><?php
-echo '<img src="/storage/exam/image/', urlencode($test['choice'][3]) ,'" alt="">';
+echo '<img src="', asset('storage/exam/image/'. urlencode($test['choice'][3]) ) ,'" alt="">';
 ?></div>
     @endif
     <input type="radio" id="{{ $test['name'] }}3" name="test{{ $index+1 }}" value="3 {{ $test['correct'] }}">
@@ -108,7 +108,7 @@ echo '<img src="/storage/exam/image/', urlencode($test['choice'][3]) ,'" alt="">
   </div>
 </div>
 @endif
-
+<x-bottom-banner />
 <script>
     var isAnswer = <?php echo  $isAnswer; ?>; // Don't forget the extra semicolon!
     console.log(isAnswer);
@@ -128,6 +128,7 @@ echo '<img src="/storage/exam/image/', urlencode($test['choice'][3]) ,'" alt="">
 </script>
 
 <script src="{{ asset('js/tabOneForm.js') }}"></script>
+<script src="{{ asset('js/navInContent.js') }}"></script>
 
 
 
@@ -135,7 +136,7 @@ echo '<img src="/storage/exam/image/', urlencode($test['choice'][3]) ,'" alt="">
 
 .space {
             width: 100%;
-            height: 5vh;
+            height: 15vh;
         }
 
       .ChoiceImage {
@@ -345,6 +346,10 @@ echo '<img src="/storage/exam/image/', urlencode($test['choice'][3]) ,'" alt="">
 
   .space {
             height: 10vh;
+        }
+
+        .submitBtn {
+          bottom: 10vh;
         }
 }
     </style>

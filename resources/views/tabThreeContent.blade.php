@@ -18,10 +18,11 @@
           
         @endforeach
     </div>
+    <x-bottom-banner />
+    <script src="{{ asset('js/navInContent.js') }}"></script>
     <style>
         .tabThreeImageCard {
             margin: auto;
-            margin-top: 6%;
             width: 60%;
         }
 
@@ -53,7 +54,8 @@
 
         @media (max-width: 575.98px) {
             .tabThreeImageCard {
-                margin-top: 10vh;
+                /* margin-top: 10vh; */
+                margin-top: -7%;
                 width: 90%;
             }
         }

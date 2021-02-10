@@ -18,7 +18,7 @@ function myFunction() {
 
 try {
     document.getElementById("closeBtn").addEventListener("click", function(){
-        window.location.href = "/";
+        window.location.href = "/license64/public";
     });
 
     document.getElementById("againBtn").addEventListener("click", function(){

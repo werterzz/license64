@@ -5,9 +5,11 @@ headTabOne = document.getElementsByClassName("headTabOne");
 tabOneBox = document.getElementsByClassName("tab-one-box");
 tabOne = document.getElementsByClassName("tab-one");
 tabTwo = document.getElementsByClassName("tab-two");
+headTabTwo = document.getElementsByClassName("headTabTwo");
 tabThree = document.getElementsByClassName("tab-three");
 randomExam = document.getElementsByClassName("randomExam");
 tabThreeContain = document.getElementsByClassName("tab-three-contain");
+head = document.getElementsByClassName("head");
 
 // tabTwo
 // -------------------------------------------------------
@@ -26,6 +28,8 @@ for (let element of x)
             tabTwo[0].classList.add('hidden');
             tabThree[0].classList.add('hidden');
             tabThreeContain[0].classList.add('hidden');
+            headTabTwo[0].classList.add('hidden');
+            
             
         }
         element.firstElementChild.classList.add('tab-selected');
@@ -37,27 +41,31 @@ for (let element of x)
           headTabOne[0].classList.remove('hidden');
           tabOne[0].classList.remove('hidden');
           tabOneBox[0].classList.remove('hidden');
+          head[0].innerText = "ข้อสอบ"
         } 
         else if (element.firstElementChild.innerText == "เนื้อหา")
         {
           // header[0].innerText = "เนื้อหา";
           tabTwo[0].classList.remove('hidden');
+          headTabTwo[0].classList.remove('hidden');
+          head[0].innerText = "เนื้อหา"
         } 
         else if (element.firstElementChild.innerText == "วิดีโอ")
         {
           // header[0].innerText = "วิดีโอ";
          tabThree[0].classList.remove('hidden'); 
          tabThreeContain[0].classList.remove('hidden');
+         head[0].innerText = "วิดีโอ"
         } 
         
     });
 }
-fetch("/data/document.json")
+fetch("./data/document.json")
 .then(response => response.json())
 .then(json => {
   // console.log(json)
   for (element of json){
-    tabTwo[0].innerHTML += `<li><a href="/tabtwo/${element.name}"> ${element.name}</a></li>`
+    tabTwo[0].innerHTML += `<li><a href="./tabtwo/${element.name}"> ${element.name}</a></li>`
 }  
 });
 // -------------------------------------------------------
@@ -76,19 +84,19 @@ fetch('https://www.googleapis.com/youtube/v3/playlists?key=' + apiKey + '&channe
   // console.log(json)
   for (element of json.items){
     //   console.log(element)
-    tabThree[0].innerHTML += `<li><a href="/tabthree/${element.snippet.title}/${element.id}"> ${element.snippet.title}</a></li>`
+    tabThree[0].innerHTML += `<li><a href="./tabthree/${element.snippet.title}/${element.id}"> ${element.snippet.title}</a></li>`
 }  
 });
 // -------------------------------------------------------
 
 // tabone
 // -------------------------------------------------------
-fetch("/data/exam.json")
+fetch("./data/exam.json")
 .then(response => response.json())
 .then(json => {
   let i = 0;
   for (element of json){
-    tabOne[0].innerHTML += `<li><a href="/tabone/${i}/0"> ${element.name}</a></li>`
+    tabOne[0].innerHTML += `<li><a href="./tabone/${i}/0"> ${element.name}</a></li>`
     i++;
 }  
 });

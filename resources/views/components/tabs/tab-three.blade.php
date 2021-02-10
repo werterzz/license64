@@ -1,3 +1,4 @@
+
 <div class="tab-three-contain hidden">
     <ul class="tab-three hidden boxSize">
     </ul>
@@ -6,7 +7,7 @@
  .tab-three {
      color: #fff;
      margin: auto;
-     margin-top: 3%;
+     margin-top: 1.8%;
      margin-bottom: 5%;
      text-align: center;
      background-color: rgba(255,255,255,0.1);
@@ -17,7 +18,7 @@
 
  .tab-three-contain {
     min-height: 84vh;
-    margin-top: 15vh;
+    margin-top: 12vh;
  }
  
  .tab-three li {
@@ -29,5 +30,10 @@
  .tab-three li a {
     color: #fff;
     text-decoration: none;
+ }
+
+ @media (max-width: 575.98px) {
+   .tab-three-contain {
+      margin-top: 10vh;
  }
 </style>
